@@ -1,9 +1,11 @@
 <template>
 <div>
-  <select v-model="selected_movie">
-    <!-- inline object literal -->
-    <option v-for="movie in movies_list" :value="movie.id">{{movie.name}}</option>
-  </select>
+  <div class="dropdown">
+    <select v-model="selected_movie">
+      <!-- inline object literal -->
+      <option v-for="movie in movies_list" :value="movie.id">{{movie.name}}</option>
+    </select>
+  </div>
   <button @click="getOption()">GET</button>
   <p>{{response_data.movie_title}}</p>
   <p> Release Date: {{response_data.release_date}} -- Popularity: {{response_data.popularity}}</p>
@@ -72,37 +74,56 @@ export default {
     }
   }
 }
-
-
 </script>
 
 <style>
 
 img {
-    width: 400px;
-    height: 600px;
-    margin-right: auto;
-    margin-left: auto;
-    border: 5px;
-  }
+  width: 400px;
+  height: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 5px;
+}
+
+p {
+  color: blue;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: 500px;
+}
+
+iframe {
+  height: 500px;
+  aspect-ratio: 16 / 9;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  background-color: rgb(244, 137, 137);
+}
+
+content{
+  text-align: center;
+}
+
+.dropdown {
+  position: flex;
+  display: inline-block;
+  margin: auto;
+}
+.dropdown-content a:hover {
+  background-color: rgb(255, 118, 118);
+}
   
-  p {
-    color: blue;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    width: 500px;
-  }
-  
-  iframe {
-    height: 600px;
-    aspect-ratio: 16 / 9;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  body {
-    background-color: rgb(244, 137, 137);
-  }
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover #MovieSelector{
+  background-color: rgb(255, 0, 0);
+}
 
 </style>
