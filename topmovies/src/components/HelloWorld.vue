@@ -6,12 +6,12 @@
       <option v-for="movie in movies_list" :value="movie.id">{{movie.name}}</option>
     </select>
   </div>
-  <button @click="getOption()">GET</button>
+  <button id="getinfo" @click="getOption()">GET</button>
   <p>{{response_data.movie_title}}</p>
-  <p> Release Date: {{response_data.release_date}} -- Popularity: {{response_data.popularity}}</p>
-  <p> Average Rating: {{response_data.vote_average}} -- Vote Count: {{response_data.vote_count}}</p>
-  <p> Language: {{response_data.original_language}} -- Budget: ${{response_data.budget}}</p>
-  <p>Overview: {{response_data.overview}}</p>
+  <p> Release Date: {{response_data.release_date}} | Popularity: {{response_data.popularity}}</p>
+  <p> Average Rating: {{response_data.vote_average}} | Vote Count: {{response_data.vote_count}}</p>
+  <p> Language: {{response_data.original_language}} | Budget: ${{response_data.budget}}</p>
+  <p> Overview: {{response_data.overview}}</p>
   <img :src=response_data.img alt="">
   <iframe :src=response_data.trailer frameborder="0" class="movieFrame"></iframe>
 </div>
@@ -79,11 +79,10 @@ export default {
 <style scoped>
 
 img {
-  width: 400px;
-  height: 600px;
-  margin-right: auto;
-  margin-left: auto;
-  border: 5px;
+  flex: auto;
+    width: 30vw;
+    aspect-ratio: 2 / 3;
+    border: 5px;
 }
 
 p {
@@ -96,14 +95,18 @@ p {
 }
 
 iframe {
-  height: 500px;
+  object-fit: contain;
+  width: 60vw;
   aspect-ratio: 16 / 9;
   margin-left: auto;
   margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  border: 3px solid blue;
 }
 
 body {
-  background-color: rgb(250, 108, 108);
+  background-color: rgb(255, 68, 68);
 }
 
 content{
@@ -113,6 +116,24 @@ content{
 .dropdown {
   position: flex;
   display: inline-block;
-  background-color: aqua;
+  background-color: rgb(255, 0, 0);
+  color: white;
 }
+
+.dropdown a:hover {
+  background-color: rgb(255, 118, 118);
+}
+
+#getinfo{
+    background-color: #52fafa;
+    color: rgb(255, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+
 </style>
