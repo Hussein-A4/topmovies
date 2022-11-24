@@ -1,7 +1,7 @@
 <template>
 <div>
-  <div class="dropdown">
-    <select v-model="selected_movie">
+  <div>
+    <select class="dropdown" v-model="selected_movie">
       <!-- inline object literal -->
       <option v-for="movie in movies_list" :value="movie.id">{{movie.name}}</option>
     </select>
@@ -76,7 +76,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 img {
   width: 400px;
@@ -92,6 +92,7 @@ p {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   width: 500px;
+  margin: auto;
 }
 
 iframe {
@@ -102,7 +103,7 @@ iframe {
 }
 
 body {
-  background-color: rgb(244, 137, 137);
+  background-color: rgb(250, 108, 108);
 }
 
 content{
@@ -112,18 +113,6 @@ content{
 .dropdown {
   position: flex;
   display: inline-block;
-  margin: auto;
+  background-color: aqua;
 }
-.dropdown-content a:hover {
-  background-color: rgb(255, 118, 118);
-}
-  
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover #MovieSelector{
-  background-color: rgb(255, 0, 0);
-}
-
 </style>
