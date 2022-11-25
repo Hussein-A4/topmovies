@@ -95,13 +95,10 @@ p {
 }
 
 iframe {
+  flex: auto;
   object-fit: contain;
   width: 60vw;
   aspect-ratio: 16 / 9;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
   border: 3px solid blue;
 }
 
@@ -116,12 +113,13 @@ content{
 .dropdown {
   position: flex;
   display: inline-block;
-  background-color: rgb(255, 0, 0);
-  color: white;
+  background-color: rgb(0, 247, 255);
+  color: rgb(0, 0, 0);
 }
 
-.dropdown a:hover {
-  background-color: rgb(255, 118, 118);
+.dropdown:hover {
+  background-color: rgb(255, 0, 0);
+  color: white;
 }
 
 #getinfo{
